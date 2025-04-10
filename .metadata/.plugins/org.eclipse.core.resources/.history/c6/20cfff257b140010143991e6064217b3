@@ -1,0 +1,52 @@
+package clt.login;
+
+import javax.swing.JPanel;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+public class LoginScreen extends JPanel {
+
+	private static final long serialVersionUID = 1L;
+	private JTextField emailField;
+	private JTextField passwordField;
+
+	public LoginScreen(JFrame parentFrame) {
+		setLayout(null);
+		
+		JButton loginButton = new JButton("Login");
+		loginButton.setBounds(123, 147, 57, 23);
+		add(loginButton);
+		
+		JButton registerButton = new JButton("Register");
+		registerButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		registerButton.setBounds(184, 147, 73, 23);
+		add(registerButton);
+		
+		JLabel emailLabel = new JLabel("Email:");
+		emailLabel.setBounds(122, 84, 28, 14);
+		add(emailLabel);
+		
+		emailField = new JTextField();
+		emailField.setBounds(155, 81, 86, 20);
+		add(emailField);
+		emailField.setColumns(10);
+		
+		JLabel passwordLabel = new JLabel("Password:");
+		passwordLabel.setBounds(100, 112, 50, 14);
+		add(passwordLabel);
+		
+		passwordField = new JTextField();
+		passwordField.setBounds(155, 109, 86, 20);
+		add(passwordField);
+		passwordField.setColumns(10);
+
+	}
+}

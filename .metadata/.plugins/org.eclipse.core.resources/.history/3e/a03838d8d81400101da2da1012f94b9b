@@ -1,0 +1,249 @@
+package view;
+
+import javax.swing.JPanel;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import java.awt.event.ActionListener;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
+import java.awt.event.ActionEvent;
+import javax.swing.JTextField;
+import model.Calculator;
+import java.awt.Color;
+
+
+
+public class Screen extends JPanel {
+
+	private static final long serialVersionUID = 1L;
+	
+	private Calculator calculadora = new Calculator();
+	
+	private JTextField firstField;
+	private JTextField secondField;
+	private JTextField resultField;
+	private JTextField activeField;
+	private String currentOperation;
+
+
+	public Screen(JFrame frame) {
+		setLayout(null);
+		
+		firstField = new JTextField();
+		firstField.setBackground(new Color(255, 255, 255));
+		firstField.setEditable(false);
+		firstField.setBounds(39, 26, 86, 20);
+		firstField.setColumns(10);
+		add(firstField);
+
+		secondField = new JTextField();
+		secondField.setBackground(new Color(255, 255, 255));
+		secondField.setEditable(false);
+		secondField.setBounds(39, 57, 86, 20);
+		secondField.setColumns(10);
+		add(secondField);
+
+		resultField = new JTextField();
+		resultField.setBackground(new Color(255, 255, 255));
+		resultField.setEditable(false);
+		resultField.setBounds(39, 102, 86, 20);
+		resultField.setColumns(10);
+		add(resultField);
+
+		
+		firstField.addFocusListener(new FocusAdapter() {
+			public void focusGained(FocusEvent e) {
+				activeField = firstField;
+			}
+		});
+
+		secondField.addFocusListener(new FocusAdapter() {
+			public void focusGained(FocusEvent e) {
+				activeField = secondField;
+			}
+		});
+
+		activeField = firstField;
+		
+		// Botão 1
+		JButton oneButton = new JButton("1");
+		oneButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String current = activeField.getText();
+				activeField.setText(current + "1");
+			}
+		});
+		oneButton.setBounds(39, 149, 50, 50);
+		add(oneButton);
+
+		// Botão 2
+		JButton twoButton = new JButton("2");
+		twoButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String current = activeField.getText();
+				activeField.setText(current + "2");
+			}
+		});
+		twoButton.setBounds(99, 149, 50, 50);
+		add(twoButton);
+
+		// Botão 3
+		JButton threeButton = new JButton("3");
+		threeButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String current = activeField.getText();
+				activeField.setText(current + "3");
+			}
+		});
+		threeButton.setBounds(159, 149, 50, 50);
+		add(threeButton);
+
+		// Botão 4
+		JButton fourButton = new JButton("4");
+		fourButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String current = activeField.getText();
+				activeField.setText(current + "4");
+			}
+		});
+		fourButton.setBounds(39, 210, 50, 50);
+		add(fourButton);
+
+		// Botão 5
+		JButton fiveButton = new JButton("5");
+		fiveButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String current = activeField.getText();
+				activeField.setText(current + "5");
+			}
+		});
+		fiveButton.setBounds(99, 210, 50, 50);
+		add(fiveButton);
+
+		// Botão 6
+		JButton sixButton = new JButton("6");
+		sixButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String current = activeField.getText();
+				activeField.setText(current + "6");
+			}
+		});
+		sixButton.setBounds(159, 210, 50, 50);
+		add(sixButton);
+
+		// Botão 7
+		JButton sevenButton = new JButton("7");
+		sevenButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String current = activeField.getText();
+				activeField.setText(current + "7");
+			}
+		});
+		sevenButton.setBounds(39, 271, 50, 50);
+		add(sevenButton);
+		
+		// Botão 8
+		JButton eightButton = new JButton("8");
+		eightButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String current = activeField.getText();
+				activeField.setText(current + "8");
+			}
+		});
+		eightButton.setBounds(99, 271, 50, 50);
+		add(eightButton);
+
+		// Botão 9
+		JButton nineButton = new JButton("9");
+		nineButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String current = activeField.getText();
+				activeField.setText(current + "9");
+			}
+		});
+		nineButton.setBounds(159, 271, 50, 50);
+		add(nineButton);
+
+		// Botão 0
+		JButton zeroButton = new JButton("0");
+		zeroButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String current = activeField.getText();
+				activeField.setText(current + "0");
+			}
+		});
+		zeroButton.setBounds(99, 332, 50, 50);
+		add(zeroButton);
+
+		// Botão CE
+		JButton ceButton = new JButton("CE");
+		ceButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				firstField.setText("");
+				secondField.setText("");
+				resultField.setText("");
+			}
+		});
+		ceButton.setBounds(39, 332, 50, 50);
+		add(ceButton);
+		
+		// Botão de soma
+		JButton additionButton = new JButton("+");
+		additionButton.setBounds(219, 149, 50, 50);
+		additionButton.addActionListener(e -> currentOperation = "+");
+		add(additionButton);
+
+		// Botão de subtração
+		JButton subtractionButton = new JButton("-");
+		subtractionButton.setBounds(219, 210, 50, 50);
+		subtractionButton.addActionListener(e -> currentOperation = "-");
+		add(subtractionButton);
+
+		// Botão de multiplicação
+		JButton productButton = new JButton("*");
+		productButton.setBounds(219, 271, 50, 50);
+		productButton.addActionListener(e -> currentOperation = "*");
+		add(productButton);
+
+		// Botão de divisão
+		JButton divisionButton = new JButton("/");
+		divisionButton.setBounds(219, 332, 50, 50);
+		divisionButton.addActionListener(e -> currentOperation = "/");
+		add(divisionButton);
+		
+		// Botão de resultado
+		JButton resultButton = new JButton("=");
+		resultButton.setBounds(159, 332, 50, 50);
+		resultButton.addActionListener(e -> {
+			try {
+				double num1 = Double.parseDouble(firstField.getText());
+				double num2 = Double.parseDouble(secondField.getText());
+				double result = 0;
+
+				switch (currentOperation) {
+					case "+":
+						result = calculadora.somar(num1, num2);
+						break;
+					case "-":
+						result = calculadora.subtrair(num1, num2);
+						break;
+					case "*":
+						result = calculadora.multiplicar(num1, num2);
+						break;
+					case "/":
+						result = calculadora.dividir(num1, num2);
+						break;
+					default:
+						resultField.setText("Op. inválida");
+						return;
+				}
+				resultField.setText(String.valueOf(result));
+			} catch (NumberFormatException ex) {
+				resultField.setText("Erro");
+			} catch (ArithmeticException ex) {
+				resultField.setText("Erro");
+			}
+		});
+		add(resultButton);
+	}
+}
