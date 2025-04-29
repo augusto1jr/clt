@@ -168,6 +168,29 @@ button {
 }
 
 
+/* Tela Cadastro */
+/* Posição invertida na tela de cadastro */
+#cadastro #login {
+  flex-direction: row-reverse;
+}
+
+/* Estilo do botão de cadastro */
+#cadastro #btn_cadastro button {
+  background-color: var(--cor3);
+  color: white;
+}
+
+/* Hover: cadastro */
+#cadastro #btn_cadastro button:hover {
+  border: 2px solid var(--cor4);
+}
+
+#cadastro #login #img {
+  background-position: right top;
+  display: block;
+  margin-left: 20px;
+}
+
 
 /* Media Queries */
 /* Versão para Tablets, Desktops e TVs */

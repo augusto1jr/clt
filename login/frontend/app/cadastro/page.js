@@ -1,6 +1,6 @@
 export default function Cadastro() {
     return (
-      <main>
+      <main id="cadastro">
         <section id="login">
           <div id="img">
             {/* Imagem de fundo já aplicada via CSS */}
