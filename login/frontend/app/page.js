@@ -7,7 +7,7 @@ export default function LoginPage() {
     <main>
       <section id="login">
         <div id="img">
-          {/* Adicione uma imagem, se necessário */}
+          {/* Imagem importada via CSS */}
         </div>
 
         <div id="form">
