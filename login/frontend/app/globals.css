@@ -94,78 +94,79 @@ html, body {
     outline: none;
 }
 
-button, input[type="submit"] {
-    all: unset; 
-    border: 1px solid var(--cor3);
-    text-align: center;
+
+/* Botões base */
+button {
+  all: unset;
+  border: 1px solid var(--cor3);
+  text-align: center;
+  cursor: pointer;
 }
 
-
-/* Botões */
-#login .btn {
-    display: inline-block;
-    width: 100%;
-    padding: 10px;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
+/* Estilização base para botões de login e cadastro */
+#login .btn,
+#btn_login button,
+#btn_cadastro button {
+  display: inline-block;
+  width: 200px;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
 }
 
+/* Containers para centralizar os botões */
 #btn_login,
 #btn_cadastro {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
 }
 
-#btn_login input {
-    background-color: var(--cor3);
-    color: white;
-    padding: 10px;
-    width: 80%;
-    border-radius: 8px;
+/* Estilo do botão de login */
+#btn_login button {
+  background-color: var(--cor3);
+  color: white;
 }
 
-#btn_cadastro input {
-    background-color: var(--cor2);
-    color: white;
-    padding: 10px;
-    width: 80%;
-    border-radius: 8px;
+/* Estilo do botão de cadastro */
+#btn_cadastro button {
+  background-color: var(--cor2);
+  color: white;
 }
 
-
-#login #btn_login input:hover {
-    border: 2px solid var(--cor4);
-    cursor: pointer;
+/* Hover: login */
+#btn_login button:hover {
+  border: 2px solid var(--cor4);
 }
 
-#login #btn_cadastro input:hover {
-    border: 2px solid var(--cor3);
-    cursor: pointer;
+/* Hover: cadastro */
+#btn_cadastro button:hover {
+  border: 2px solid var(--cor3);
 }
 
+/* Recuperar senha */
 #btn_forgot {
-    display: flex;
-    justify-content: center;
-    margin-top: -20px;
+  display: flex;
+  justify-content: center;
+  margin-top: -20px;
 }
 
 #login #btn_forgot a {
-    display: inline-block;
-    margin-top: 10px;
-    text-align: center;
-    text-decoration: none;
-    color: var(--cor4);
-    font-size: 14px;
-    transition: color 0.3s ease;
+  display: inline-block;
+  margin-top: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--cor4);
+  font-size: 14px;
+  transition: color 0.3s ease;
 }
 
 #login #btn_forgot a:hover {
-    text-decoration: underline;
-    color: var(--cor2);
+  text-decoration: underline;
+  color: var(--cor2);
 }
+
 
 
 /* Media Queries */

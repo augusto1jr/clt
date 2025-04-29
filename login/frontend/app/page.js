@@ -1,5 +1,6 @@
 'use client';
 import './globals.css';
+import Link from "next/link";
 
 export default function LoginPage() {
   return (
@@ -46,12 +47,16 @@ export default function LoginPage() {
 
             {/* Botão de Login */}
             <div id="btn_login">
-              <input type="submit" value="Login" />
+            <Link href="/login">
+              <button>Login</button>
+            </Link>
             </div>
 
             {/* Botão de Cadastro */}
             <div id="btn_cadastro">
-              <input type="submit" value="Cadastrar-se" />
+              <Link href="/cadastro">
+              <button>Cadastrar</button>
+              </Link>
             </div>
 
             {/* Link para Recuperar Senha */}
