@@ -61,6 +61,7 @@ html, body {
     color: var(--cor4);
 }
 
+/* Formulário */
 #login #person {
     transform: translateY(4px);
 }
@@ -111,13 +112,22 @@ button, input[type="submit"] {
     cursor: pointer;
 }
 
-#btn_login {
+#btn_login,
+#btn_cadastro {
     display: flex;
     justify-content: center;
     margin-top: 10px;
 }
 
-#login #btn_login input {
+#btn_login input {
+    background-color: var(--cor3);
+    color: white;
+    padding: 10px;
+    width: 80%;
+    border-radius: 8px;
+}
+
+#btn_cadastro input {
     background-color: var(--cor2);
     color: white;
     padding: 10px;
@@ -125,8 +135,14 @@ button, input[type="submit"] {
     border-radius: 8px;
 }
 
+
 #login #btn_login input:hover {
-    background-color: var(--cor1);
+    border: 2px solid var(--cor4);
+    cursor: pointer;
+}
+
+#login #btn_cadastro input:hover {
+    border: 2px solid var(--cor3);
     cursor: pointer;
 }
 

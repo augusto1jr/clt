@@ -49,9 +49,14 @@ export default function LoginPage() {
               <input type="submit" value="Login" />
             </div>
 
+            {/* Botão de Cadastro */}
+            <div id="btn_cadastro">
+              <input type="submit" value="Cadastrar-se" />
+            </div>
+
             {/* Link para Recuperar Senha */}
             <div id="btn_forgot">
-              <a href="recuperar-senha.html">Esqueceu a senha?</a>
+              <a href="">Esqueceu a senha?</a>
             </div>
           </form>
         </div>
