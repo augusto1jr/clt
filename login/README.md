@@ -115,7 +115,7 @@ cd frontend
 ## 📷 Capturas de Tela
 
 ### Tela de Login
-![Tela de Login](images/tela-inicial.png)
+![Tela de Login](images/tela-login.png)
 
 ### Tela de Cadastro
 ![Tela de Cadastro](images/tela-cadastro.png)
