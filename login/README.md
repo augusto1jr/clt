@@ -1,104 +1,121 @@
 # 💪 Sistema de Login – Projeto Full Stack
 
-Este projeto é uma aplicação de cadastro e login simples, feita com **Java + Spring Boot** no backend e **Next.js** no frontend.
+Aplicação full stack simples com funcionalidades de **cadastro** e **login** de usuários. O backend foi desenvolvido com **Java + Spring Boot**, e o frontend com **Next.js + React**.
 
 ---
 
-## 🧰 Tecnologias utilizadas
+## 🧰 Tecnologias Utilizadas
 
-- ⚙️ Backend: Java 17, Spring Boot, MySQL
-- 🖥️ Frontend: Next.js, React
-- 🗄️ Banco de Dados: MySQL
+### 🔧 Backend
+- Java 17
+- Spring Boot
+- Maven
+- MySQL
+
+### 🖥️ Frontend
+- Next.js
+- React
+- Node.js
 
 ---
 
-## 🚀 Como rodar o projeto
+## 🗂️ Estrutura do Projeto
 
-### 1️⃣ Criar o banco de dados
+```
+/backend
+    ├── src/
+    └── pom.xml
 
-Abra o **MySQL Workbench** e execute o script abaixo para criar o banco e as tabelas:
-
-```sql
-login_script.sql
+/frontend
+    ├── pages/
+    └── package.json
 ```
 
 ---
 
-### 2️⃣ Backend (Java + Spring Boot)
+## 🚀 Como Executar o Projeto
 
-#### ✅ Pré-requisitos:
+### 1️⃣ Criar o Banco de Dados
+
+Abra o **MySQL Workbench** e execute o script `login_script.sql` para criar o banco de dados e suas tabelas.
+
+---
+
+### 2️⃣ Rodar o Backend (Spring Boot)
+
+#### ✅ Pré-requisitos
 - Java 17 ou superior
-- Maven instalado
-- MySQL rodando localmente
+- Maven
+- MySQL ativo localmente
 
-#### ▶️ Rodando o backend:
+#### ▶️ Instruções
 
 ```bash
 cd backend
 ```
 
 1. Instale as dependências (se necessário):
+   ```bash
+   mvn clean install
+   ```
 
-```bash
-mvn clean install
-```
+2. Atualize o arquivo `src/main/resources/application.properties` com suas configurações:
+   ```properties
+   spring.datasource.url=jdbc:mysql://localhost:3306/login_db
+   spring.datasource.username=SEU_USUARIO
+   spring.datasource.password=SUA_SENHA
+   ```
 
-2. Inicie a aplicação:
-
-- **Via terminal**:
-
-```bash
-mvn spring-boot:run
-```
-
-- **Ou via IDE (ex: IntelliJ/Eclipse)**:  
-Abra e execute o arquivo:
-
-```
-src/main/java/com/login/LoginApplication.java
-```
+3. Inicie a aplicação:
+   - Pelo terminal:
+     ```bash
+     mvn spring-boot:run
+     ```
+   - Ou pela sua IDE (IntelliJ, Eclipse etc.):
+     Execute o arquivo `LoginApplication.java`
 
 📡 O backend ficará disponível em: `http://localhost:8080/`
 
 ---
 
-### 3️⃣ Frontend (Next.js)
+### 3️⃣ Rodar o Frontend (Next.js)
 
-#### ✅ Pré-requisitos:
+#### ✅ Pré-requisitos
 - Node.js 18 ou superior
 
-#### ▶️ Rodando o frontend:
+#### ▶️ Instruções
 
 ```bash
 cd frontend
 ```
 
 1. Instale as dependências:
+   ```bash
+   npm install
+   ```
 
-```bash
-npm install
-```
+2. Inicie o servidor de desenvolvimento:
+   ```bash
+   npm run dev
+   ```
 
-2. Inicie a aplicação:
-
-```bash
-npm run dev
-```
-
-🌐 A aplicação estará disponível em: [http://localhost:3000](http://localhost:3000)
+🌐 Acesse a aplicação em: [http://localhost:3000](http://localhost:3000)
 
 ---
 
-## 🧪 Como usar
+## 🧪 Como Usar
 
 1. Acesse [http://localhost:3000](http://localhost:3000)
-2. Cadastre-se com um email e senha
+2. Cadastre-se com um e-mail e senha
 3. Faça login com as credenciais cadastradas
+4. Navegue pela aplicação autenticada
 
 ---
 
-## 🏁 Fim
+## 📷 Capturas de Tela
 
-Projeto finalizado com sucesso. Obrigado por conferir! 🙌
+### Tela de Login
+![Tela de Login](images/tela-inicial.png)
 
----
+### Tela de Cadastro
+![Tela de Cadastro](images/tela-cadastro.png)
